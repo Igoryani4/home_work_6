@@ -40,11 +40,16 @@ for i in range (len_find_index):
 mult = 1        
 print (f'Это список индексов для произведения :{list_find_index}')
 
-# def multi (number):
-#     return mult * list1[list_find_index[number]]
-# mult = list(map(multi, list_find_index))
+
+
+
+
+# Новое решение
+
 
 mult1 = list(map(lambda num: mult * list1[num], list_find_index))
+
+#Старое решение
 # for i in range (len_find_index):
 #     mult *= list1[list_find_index[i]]
 print (f'Произведение элементов заданных индексов равно :{mult1}')
