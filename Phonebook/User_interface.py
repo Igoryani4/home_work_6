@@ -1,4 +1,10 @@
-def get_info ():
+from File_writing import writing_scv
+from File_writing import writing_txt
+from csv_reading import read_csv
+from edit_contact import edit_contact
+
+
+def get_info():
     info = []
     
     last_name = input('Введите фамилию: ')
@@ -21,3 +27,30 @@ def get_info ():
     description = input('Введите описание: ')
     info.append(description)
     return info
+
+
+def menu():
+
+    print("Привет, я твой телефонный справочник, я умею:")
+    print('1. Создать контакт\n2. Редактировать контакт\n3. Удалить контакт\n4. Вывести список контактов')
+    choice = int(input())
+    if choice == 1:
+        get_info()
+        writing_scv ()
+        writing_txt ()
+    elif choice == 2:
+        edit_contact(choice)
+        writing_scv ()
+        writing_txt ()
+    elif choice == 3:
+        del_contact()
+        writing_scv ()
+        writing_txt ()
+    else:
+        read_csv
+
+
+
+
+
+
