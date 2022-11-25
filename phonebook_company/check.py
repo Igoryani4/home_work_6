@@ -2,78 +2,85 @@ import crud as cr
 import logger as lg
 import user_interface as ui
 import searh as sh
+import create
 
+
+def сhecking_the_number(arg):
+    while arg.isdigit() != True:
+        lg.logging.info('User entered an invalid menu value: {arg}')
+        arg = ui.message()
+        lg.logging.info('User entered: {arg}')
+    return int(arg)
 
 def all_contact():
     lg.logging.info('The user has selected item number 1')
     print(cr.retrive())
-  
+    
+    
+def check_surname():
+    lg.logging.info('The user has selected item number 2')
+    search = ui.input_surname()
+    lg.logging.info('User entered: {search}')
+    print(cr.retrive(surname = search))
+    
+def check_car_number():
+    lg.logging.info('The user has selected item number 3')
+    search = ui.input_car_number()
+    lg.logging.info('User entered: {search}')
+    print(cr.retrive(car_number = search))
+    
+def check_phone_number():
+    lg.logging.info('The user has selected item number 4')
+    search = ui.input_phone_number()
+    lg.logging.info('User entered: {search}')
+    print(cr.retrive(number = search))
   
  
 def check_menu(n):
     if n == 1:
         all_contact()
+        
     elif n == 2:
-        sh.check_surname()
+        check_surname()
+        
     elif n == 3:
-        sh.check_car_number()
+        check_car_number()
+        
     elif n == 4:
-        ch.check_phone_number()
+        check_phone_number()
+        
     elif n == 5:
-        ch.new_contact()
-            lg.logging.info('The user has selected item number 5')
-            name = input('Введите имя: ')
-            lg.logging.info('User entered: {name}')
-            surname = input('Введите фамилию: ')
-            lg.logging.info('User entered: {surname}')
-            number = input('Введите номер телефона: ')
-            lg.logging.info('User entered: {number}')
-            email = input('Введите электронную почту: ')
-            lg.logging.info('User entered: {email}')
-            car_number = input('Введите гос. номер автомобиля: ')
-            lg.logging.info('User entered: {car_number}')
-            car_model = input('Введите модель автомобиля: ')
-            lg.logging.info('User entered: {car_number}')
-            cr.create(name, surname, number, email, car_number, car_model)
-
-        elif n == 6:
+        create.new_contact()
+        
+    elif n == 6:
             lg.logging.info('The user has selected item number 6')
-            print('1. Найти клиента по фамилии.')
-            print('2. Найти клиента по гос номеру автомобиля.')
-            print('3. Поиск по номеру телефона.')
-            change = сhecking_the_number(input('Введите номер пункта: '))
+            ui.change_contact()
             
-
-
-
             if change == 1:
                 sh.update_surname()
                 
-
             elif change == 2:
                 sh.update_car_number()
 
             elif change == 3:
-                lg.logging.info('The user has selected item number 6.3')
-                search = input('Введите номер телефона: ')
-                lg.logging.info('User entered: {search}')
-                cr.retrive(number=search)
-                user_id = input('Введите id записи: ')
-                lg.logging.info('User entered: {user_id}')
-                new_number = input('Введите новый номер телефона: ')
-                lg.logging.info('User entered: {new_number}')
-                cr.update(id=user_id, new_number=new_number)
+                sh.update_phone_number()
+                
 
             else:
                 lg.logging.info('User entered an invalid menu value')
                 chek_list = [1,2,3]
                 while change not in chek_list:
-                    change = int(input('Введите верный номер пункта: '))
-                # change = int(input('Введите верный номер пункта: '))
+                    change = ui.right_input()
+                    lg.logging.info('User entered: {change}')
+                if change == 1:
+                        sh.update_surname()
                 
+                elif change == 2:
+                        sh.update_car_number()
 
-                # print(
-                #     '\nТакого пункта меню не существует.\nВведите цифру, соответствующую пункту меню.')
+                elif change == 3:
+                        sh.update_phone_number()
+                
 
         elif n == 7:
             lg.logging.info('The user has selected item number 7')
@@ -117,7 +124,7 @@ def check_menu(n):
 
         elif n == 8:
             lg.logging.info('End')
-            print('Спасибо за работу!')
+            print('Всего доброго!!!, Спасибо что пользуетесь нашей базой данных')
             break
 
         else:
