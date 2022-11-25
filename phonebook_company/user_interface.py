@@ -163,7 +163,7 @@ def input_name():
     return input('Введите имя: ')
 
 def input_car_number():
-    return input('Введите имя: ')
+    return input('Введите номер автомобиля: ')
 
 def input_surname ():
     return input('Введите фамилию: ')
