@@ -64,12 +64,12 @@ def create(name='', surname='', number='', email='', car_number='', car_model=''
         writer.writerow(new_row)
 
 
-# поиск (если нужно выгрузить все: result = retrive())
+
 def retrive(id='', name='', surname='', number='', email=''):
     global global_id
     global db
     global db_file_name
-    count = 0
+    result = []
     for row in db:
         if (id != '' and row[0] != id):
             continue
@@ -81,13 +81,12 @@ def retrive(id='', name='', surname='', number='', email=''):
             continue
         if(email != '' and row[3] != email.lower()):
             continue
-        count += 1
+        result.append(row)
         print(f'{row[0]} \t{row[1]} \t{row[2]} \t{row[3]} \t{row[4]} \t{row[5]} \t{row[6]}')
-    if count == 0:
+    if result == 0:
         return f'Контакты не найдены'
-    # else:
-    #     return for i in range(le)
-    #     # return (* result)
+    else:
+        return 
 
 
 def update(id='', new_name='', new_surname='', new_number='', new_email=''):
