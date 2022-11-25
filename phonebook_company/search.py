@@ -4,7 +4,7 @@ import user_interface as ui
 
 
 
-def search_surname():
+def update_surname():
     lg.logging.info('The user has selected item number 6.1')
     search = ui.input_surname()
     lg.logging.info('User entered: {search}')
@@ -13,12 +13,12 @@ def search_surname():
     lg.logging.info('User entered: {user_id}')
     new_number = ui.input_new_number_phone()
     lg.logging.info('User entered: {new_number}')
-    cr.update(id=user_id, new_number=new_number)
+    cr.update(id=user_id, new_number = new_number)
 
 
 
 
-def search_car_number():
+def update_car_number():
     lg.logging.info('The user has selected item number 6.2')
     search = ui.input_car_number()
     lg.logging.info('User entered: {search}')
@@ -27,4 +27,24 @@ def search_car_number():
     lg.logging.info('User entered: {user_id}')
     new_number = ui.input_new_number_phone()
     lg.logging.info('User entered: {new_number}')
-    cr.update(id=user_id, new_number=new_number)
+    cr.update(id=user_id, new_number = new_number)
+
+    
+def check_surname():
+    lg.logging.info('The user has selected item number 2')
+    search = ui.input_surname()
+    lg.logging.info('User entered: {search}')
+    print(cr.retrive(surname = search))
+    
+def check_car_number():
+    lg.logging.info('The user has selected item number 3')
+    search = ui.input_car_number()
+    lg.logging.info('User entered: {search}')
+    print(cr.retrive(car_number = search))
+    
+def check_phone_number():
+    lg.logging.info('The user has selected item number 4')
+    search = ui.input_phone_number()
+    lg.logging.info('User entered: {search}')
+    print(cr.retrive(numbe r= search))
+    
