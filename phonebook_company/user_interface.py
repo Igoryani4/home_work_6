@@ -171,6 +171,15 @@ def input_surname ():
 def input_id ():
     return input('Введите id записи: ')
 
+def input_phone_number():
+    return input('Введите номер  телефона: ')
+
+def input_email():
+    return input('Введите электронную почту: ')
+
+def input_car_model():
+    return input('Введите модель автомобиля: ')
+
 def input_new_number_phone():
     return input('Введите новый номер телефона: ')
 
