@@ -1,6 +1,7 @@
 import crud as cr
 import logger as lg
 import search as sh
+import check as ch
 
 print('\nЭто база данных клиентов автосалона')
 
@@ -18,10 +19,11 @@ def ls_menu():
         print('8. Закрыть программу.\n')
         
         n = сhecking_the_number(input('Выберите пункт меню: '))
+        
+        check_menu(n)
 
         if n == 1:
-            lg.logging.info('The user has selected item number 1')
-            print(cr.retrive())
+            ch.all_contact()
 
         elif n == 2:
             lg.logging.info('The user has selected item number 2')
@@ -68,11 +70,11 @@ def ls_menu():
 
 
             if change == 1:
-                sh.search_surname()
+                sh.update_surname()
                 
 
             elif change == 2:
-                sh.search_car_number()
+                sh.update_car_number()
 
             elif change == 3:
                 lg.logging.info('The user has selected item number 6.3')
