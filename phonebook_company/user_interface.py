@@ -163,5 +163,15 @@ def input_name():
 def input_car_number():
     return input('Введите имя: ')
 
+def input_surname ():
+    return input('Введите фамилию: ')
+
+def input_id ():
+    return input('Введите id записи: ')
+
+def input_new_number_phone():
+    return input('Введите новый номер телефона: ')
+
+
 
 # я закончил на переводе в отдельные функции поиска и из плиска в меню ЮИ 
