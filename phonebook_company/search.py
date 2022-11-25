@@ -30,21 +30,5 @@ def update_car_number():
     cr.update(id=user_id, new_number = new_number)
 
     
-def check_surname():
-    lg.logging.info('The user has selected item number 2')
-    search = ui.input_surname()
-    lg.logging.info('User entered: {search}')
-    print(cr.retrive(surname = search))
-    
-def check_car_number():
-    lg.logging.info('The user has selected item number 3')
-    search = ui.input_car_number()
-    lg.logging.info('User entered: {search}')
-    print(cr.retrive(car_number = search))
-    
-def check_phone_number():
-    lg.logging.info('The user has selected item number 4')
-    search = ui.input_phone_number()
-    lg.logging.info('User entered: {search}')
-    print(cr.retrive(numbe r= search))
+
     
