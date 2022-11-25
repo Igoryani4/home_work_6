@@ -31,22 +31,22 @@ def create(name='', surname='', number='', email='', car_number='', car_model=''
     global db
     global db_file_name
     if(name == ''):
-        print(f'Внимание это поле не может быть пустым')
+        alarm()
         return
     if(surname == ''):
-        print("ALARM NO SURNAME SPECIFIED!!!!!1111")
+        alarm()
         return
     if(number == ''):
-        print("ALARM NO TELEPHONE NUMBER SPECIFIED!!!!!1111")
+        alarm()
         return
     if(email == ''):
-        print("ALARM NO EMAIL SPECIFIED!!!!!1111")
+        alarm()
         return
     if(car_number == ''):
-        print("ALARM NO EMAIL SPECIFIED!!!!!1111")
+        alarm()
         return
     if(car_model == ''):
-        print("ALARM NO EMAIL SPECIFIED!!!!!1111")
+        alarm()
         return
 
     for row in db:
@@ -63,9 +63,11 @@ def create(name='', surname='', number='', email='', car_number='', car_model=''
                             quotechar='\'', quoting=csv.QUOTE_MINIMAL)
         writer.writerow(new_row)
 
+def alarm():
+    print('Внимание это поле не может быть пустым')
+    
 
-
-def retrive(id='', name='', surname='', number='', email=''):
+def retrive(id='', name='', surname='', number='', email='', car_number='', car_model=''):
     global global_id
     global db
     global db_file_name
@@ -89,7 +91,7 @@ def retrive(id='', name='', surname='', number='', email=''):
         return 
 
 
-def update(id='', new_name='', new_surname='', new_number='', new_email=''):
+def update(id='', new_name='', new_surname='', new_number='', new_email='', car_number='', car_model=''):
     global global_id
     global db
     global db_file_name
@@ -112,6 +114,12 @@ def update(id='', new_name='', new_surname='', new_number='', new_email=''):
 
                 if(new_email != ''):
                     row[3] = new_email.lower()
+                
+                if(new_car_number != ''):
+                    row[3] = new_car_number
+                    
+                if(new_car_model != ''):
+                    row[3] = new_car_model
 
             writer.writerow(row)
 
