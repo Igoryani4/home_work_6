@@ -1,7 +1,7 @@
 import crud as cr
 import logger as lg
 import user_interface as ui
-import searh as sh
+import search as sh
 import create
 
 
@@ -82,14 +82,14 @@ def check_menu(n):
                         sh.update_phone_number()
                 
 
-        elif n == 7:
-            lg.logging.info('The user has selected item number 7')
-            print('1. Найти номер по фамилии.')
-            print('2. Найти номер по имени.')
-            print('3. Поиск по номеру телефона.')
-            deleting = сhecking_the_number(input('Введите номер пункта: '))
+    elif n == 7:
+        lg.logging.info('The user has selected item number 7')
+        print('1. Найти номер по фамилии.')
+        print('2. Найти номер по имени.')
+        print('3. Поиск по номеру телефона.')
+        deleting = сhecking_the_number(input('Введите номер пункта: '))
 
-            if deleting == 1:
+        if deleting == 1:
                 lg.logging.info('The user has selected item number 7.1')
                 search = input('Введите фамилию: ')
                 lg.logging.info('User entered: {search}')

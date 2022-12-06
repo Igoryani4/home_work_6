@@ -9,7 +9,7 @@ def chenge_contact():
     print('1. Найти клиента по фамилии.')
     print('2. Найти клиента по гос номеру автомобиля.')
     print('3. Поиск по номеру телефона.')
-    return change = сhecking_the_number(input('Введите номер пункта: '))
+    return ch.сhecking_the_number(input('Введите номер пункта: '))
 
 def ls_menu():
     while True:
